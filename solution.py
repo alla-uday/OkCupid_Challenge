@@ -50,6 +50,36 @@ class matches:
 	 	 	self.scores = []
 
 IMPORTANCE_POINTS = [0, 1, 10, 50, 250]
+"""
+user1 = id()
+user2 = id()
+question1a = questionId()
+question1b= questionId()
+question1a.number = 1
+question1b.number = 1
+question1a.importance = 3
+question1b.importance = 1
+question1a.acceptableAnswers = [2,3]
+question1b.acceptableAnswers = [2]
+question1a.answer = 3
+question1b.answer = 2
+
+question2a = questionId()
+question2b = questionId()
+question2a.number = 2
+question2b.number = 2
+question2a.importance = 1
+question2b.importance = 2
+question2a.acceptableAnswers = [2]
+question2b.acceptableAnswers = [2]
+question2a.answer = 2
+question2b.answer = 1
+user1.number = 1
+user1.questions = [question1a,question2a]
+user2.number = 2
+user2.questions = [question1b, question2b]
+ids = [user1, user2]
+"""
 compareids = ids
 arrayOfMatches = []
 tempmatches=[]
@@ -81,7 +111,7 @@ for i in ids:
 			if countCommonQuestions == 0:
 				score = 0
 			else:
- 				score = (math.sqrt(((totalmatchedvalueA*100)/totalimportancesA)*((totalmatchedvalueB*100)/totalimportancesB)) - (1/countCommonQuestions))/100
+ 				score = math.sqrt(((totalmatchedvalueA*100)/totalimportancesA)*((totalmatchedvalueB*100)/totalimportancesB)) - (1*100/countCommonQuestions)
  			tempscoresforsort.append(score)
  			dictForScores.update({score:j.number})
  	tmpch = matches()
